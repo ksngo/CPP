@@ -14,6 +14,9 @@ int main()
 
     std::cout<<"The sum of "<<v1<<" and "<<v2<<" is "<<v1+v2<<std::endl;
 
+    std::cout<<"Hello"<<std::endl;
+    std::cout<<"world"<<std::endl;
+
     return 0;
 
 
