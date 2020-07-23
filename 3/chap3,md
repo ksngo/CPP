@@ -1,4 +1,4 @@
-vector -access by range for, subscript or iterator
+vector -access by range for, subscript or iterator(vector.begin(), vector.end())
 
 for(decltype(vector.size()) i=0; i<vector.size();i++)
 
