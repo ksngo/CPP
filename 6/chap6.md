@@ -70,3 +70,7 @@ void print(int (&arr)[10]){
         return (i%2) ? &odd : &even;
     }
 ```
+# tough topic
+## typedef 
+## decltype
+<img src="./img/pg382.JPG">
