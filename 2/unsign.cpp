@@ -1,16 +1,19 @@
 #include <iostream>
+using std::cout; 
+using std::cin;
+using std::endl;
 
 int main()
 {
 
     unsigned u=10, u2=42, u3=0, u4=-1, u5=-2;
     int i =10;
-    std::cout<<u-u2<<std::endl;
-    std::cout<<u3<<std::endl;
-    std::cout<<u4<<std::endl; //unsigned int 4 bytes/32bits has max 4294957295;
-    std::cout<<u5<<std::endl;
-    std::cout<<i-u<<std::endl;
-    std::cout<<u-i<<std::endl;
+    cout<<u-u2<<endl;
+    cout<<u3<<endl;
+    cout<<u4<<endl; //unsigned int 4 bytes/32bits has max 4294957295;
+    cout<<u5<<endl;
+    cout<<i-u<<endl;
+    cout<<u-i<<endl;
 
 
     /*

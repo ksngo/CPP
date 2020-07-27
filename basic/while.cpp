@@ -58,6 +58,16 @@ int main()
         std::cout<<count<<" ";
     }
     std::cout<<std::endl;
+
+    sum=0;
+    int value;
+    std::cout<<"Start entering number and they will be summed."<<std::endl;
+
+    while(std::cin>>value){
+        
+        sum+=value;
+        std::cout<<"The sum is now "<<sum<<std::endl;
+    }
     
     return 0;
 
