@@ -73,4 +73,4 @@ void print(int (&arr)[10]){
 # tough topic
 ## typedef 
 ## decltype
-<img src="./img/pg382.JPG">
+<img src="./img/pg328.JPG">
