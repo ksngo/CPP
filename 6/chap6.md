@@ -58,6 +58,7 @@ void print(int (&arr)[10]){
 # function that returns a pointer to an array
 
 1) e.g. int (*func(int i)) [10]
+    - should be & instead of *, (ex636)
 2) alternatively, using pointer(->)
     - e.g. auto func(int i) -> int(*)[10]
 3) alternative, possible to use decltype
