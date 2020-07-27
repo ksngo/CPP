@@ -58,8 +58,8 @@ initializer_list<int> li;
     e.g. auto func(int i) -> int(*)[10]
 3) alternative, possible to use decltype
 
-    int odd[] = {1,3,5,7,9}; '\n'
-    int even[] = {2,4,6,8,10}; '\n'
-    decltype(odd) *arrPtr(int i){ '\n'
+    int odd[] = {1,3,5,7,9}; \n
+    int even[] = {2,4,6,8,10}; \n
+    decltype(odd) *arrPtr(int i){ \n
         return (i%2) ? &odd : &even;
     }
