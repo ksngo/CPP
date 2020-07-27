@@ -62,7 +62,7 @@ void print(int (&arr)[10]){
     - e.g. auto func(int i) -> int(*)[10]
 3) alternative, possible to use decltype
 
-```
+```c++
     int odd[] = {1,3,5,7,9}; 
     int even[] = {2,4,6,8,10}; 
     decltype(odd) *arrPtr(int i){ 
