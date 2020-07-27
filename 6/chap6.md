@@ -1,7 +1,7 @@
 
 <img src="./img/pg280.JPG" >
 
-##manage array arguments in a function##
+#manage array arguments in a function
 
 1) string pointer where last character is not a null
 void print(const char *cp){
@@ -39,7 +39,7 @@ void print(int (&arr)[10]){
 }
 
 
-<< initializer_list>> ex627, ex628, ex629
+#initializer_list (ex627, ex628, ex629)
 
 #include <initializer_list> 
 // like vector, initializer_list is template type.
@@ -51,15 +51,17 @@ initializer_list<string> ls;
 initializer_list<int> li;
 
 
-<<function that returns a pointer to an array>>
+#function that returns a pointer to an array
 
 1) e.g. int (*func(int i)) [10]
 2) alternatively, using pointer(->)
     e.g. auto func(int i) -> int(*)[10]
 3) alternative, possible to use decltype
 
-    int odd[] = {1,3,5,7,9}; \n
-    int even[] = {2,4,6,8,10}; \n
-    decltype(odd) *arrPtr(int i){ \n
+```
+    int odd[] = {1,3,5,7,9}; 
+    int even[] = {2,4,6,8,10}; 
+    decltype(odd) *arrPtr(int i){ 
         return (i%2) ? &odd : &even;
     }
+```
