@@ -17,7 +17,18 @@ class Person
     //constructor
     Person() = default; //ex7.15
     Person(string s, string a): name(s), address(a) {} //ex7.15
-    Person(istream& is){ read(is, *this);}
+    explicit Person(istream& is){ read(is, *this);}
+    // explicit keyword before constructor basically prevents the constructor being used for any implicit arguement type(e.g. istream& ) to convert to Person class type
+    //explicit is only meaningful for a single argument constructor
+    //explicit will prevent any implicit class-type conversion
+    //e.g. if there's a function(Person& p).
+    //e.g. normally, function(p) where p is Person class type
+    //e.g. also acceptes, function(cin) where cin is istream type
+    //e.g. implicitly converts istream type to Person class type
+    // explicit is used only on the constructor declaration inside the class.Not repeated on definition 
+    //outside the class body. 
+    // to force a conversion if constructor is explicit
+    // function(Person(cin)) or function(static_cast<Person>(cin))
 
     //members functions
     const string& getName() const { return name;}

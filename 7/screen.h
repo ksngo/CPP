@@ -1,10 +1,14 @@
 #include <iostream>
 #include <string>
+#include "window.h"
 
 using namespace std;
 
 class Screen
-{
+{   
+    //friend class Window_mgr; //so that Window_mgr class type can have access to Screen class members
+    friend void Window_mgr::clear(ScreenIndex); //friend specific function instead
+
     public:
         typedef string::size_type pos;
         //alternatively
