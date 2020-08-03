@@ -7,7 +7,7 @@
     - ostream, wostream
     - iostream, wiostream
 
-<img src="82.JPG">
+<img src="./img/82.JPG">
 
 2) fstream
     - ifstream, wifstream
@@ -16,7 +16,7 @@
         - inheritance from ostream class
     - fstream, wfstream
 
-<img src="83.JPG">
+<img src="./img/83.JPG">
 
 3) sstream
     - istringstream, wistringstream
@@ -25,4 +25,4 @@
         - inheritance from ostream class
     - stringstream, wstringstream
 
-<img src="85.JPG">
+<img src="./img/85.JPG">
