@@ -40,6 +40,7 @@
         "cctype": "cpp",
         "iterator": "cpp",
         "list": "cpp",
-        "deque": "cpp"
+        "deque": "cpp",
+        "forward_list": "cpp"
     }
 }
