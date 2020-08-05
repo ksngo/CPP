@@ -33,3 +33,32 @@
 
 <img src="./img/tbl913.JPG">
 
+## String search  functions
+
+<img src="./img/tb914.JPG">
+
+
+## string compare function
+- s.compare(args) returns 0 if s equal args
+- s.compare(args) returns postive if a greater than args
+- s.compare(args) returns negative if a lesser than args
+
+<img src="./img/tb915.JPG">
+
+## string and number conversions
+
+```c++
+    string s2 = "pi = 3.14";
+    d  = stod(s2.substr(s2.find_first_of("+-.0123456789")));
+
+```
+<img src="./img/tb916.JPG">
+
+# Container adaptors
+
+<img src="./img/tb917.JPG">
+<img src="./img/tb918.JPG">
+<img src="./img/tb919.JPG">
+
+
+
