@@ -8,6 +8,7 @@ class Sales_data {
     friend istream& read(istream&, Sales_data&);
     friend ostream& print(ostream&, Sales_data&);
     friend Sales_data add(Sales_data& , Sales_data&);
+    
 
     public:
     Sales_data() = default;
