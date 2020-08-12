@@ -131,24 +131,43 @@ int main()
    //sort(b, e, predicate)
 
    
-    vector<string> ivec{"the","quick","brown","fox","jumps","over","the","lazy","dog"};
+    // vector<string> ivec{"the","quick","brown","fox","jumps","over","the","lazy","dog"};
 
-    sort(ivec.begin(), ivec.end());
-    auto end_iter= unique(ivec.begin(), ivec.end()); //need to be sorted to alphabetically order for unique to apply to remove adjacent similar letters.
-    ivec.erase(end_iter, ivec.end());
-    for(auto i: ivec) cout<<i<<" "; //The quick brown fox jumps over The lazy dog
-    cout<<endl;
-
-
-    // sort(ivec.begin(), ivec.end(), isShorter);
-    // for(auto i: ivec) cout<<i<<" "; //dog fox the lazy over brown jumps quick
+    // sort(ivec.begin(), ivec.end());
+    // auto end_iter= unique(ivec.begin(), ivec.end()); //need to be sorted to alphabetically order for unique to apply to remove adjacent similar letters.
+    // ivec.erase(end_iter, ivec.end());
+    // for(auto i: ivec) cout<<i<<" "; //The quick brown fox jumps over The lazy dog
     // cout<<endl;
+
+
+    // // sort(ivec.begin(), ivec.end(), isShorter);
+    // // for(auto i: ivec) cout<<i<<" "; //dog fox the lazy over brown jumps quick
+    // // cout<<endl;
     
-    stable_sort(ivec.begin(), ivec.end(), isShorter); //stable_sort maintains original order thus keeping alphabetical order of the same length
-    for(auto i: ivec) cout<<i<<" ";  //dog fox the lazy over brown jumps quick
-    cout<<endl;
+    // stable_sort(ivec.begin(), ivec.end(), isShorter); //stable_sort maintains original order thus keeping alphabetical order of the same length
+    // for(auto i: ivec) cout<<i<<" ";  //dog fox the lazy over brown jumps quick
+    // cout<<endl;
 
    
+    //(8) mutable lambda
+
+    size_t a = 42;
+    auto f = [a]() mutable {return ++a;};
+    cout<<a<<endl; //42
+    a = 0;
+    auto j = f();
+    cout<<j<<endl; //43
+    cout<<a<<endl; //0
+    
+    size_t b = 42;
+    auto g = [&b]() {return ++b;};
+    cout<<b<<endl; //42
+    b= 0;
+    auto h = g();
+    cout<<h<<endl; //1
+    cout<<b<<endl; //1
+
+
 
 
 
