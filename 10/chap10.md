@@ -79,4 +79,70 @@
     using namespace std::placeholders // making all names defined by placeholders usable
     
     find_if(words.begin(), words.end(), bind(check_size, _1, sz));
+```
+
+# iterator header
+
+```c++
+ #include <iterator>
+```
+## insert iterators
+    - back_inserter()   , create iterator using container push_back
+    - front_inserter() , create iterator using container push_front
+    - inserter()    , create iterator using container insert
+
+```c++
+    //copy algorithm header
+    list<int> lst{1,2,3,4};
+    list<int> lst2, lst3;
+    copy(lst.cbegin(), lst.cend(), front_inserter(lst2));
+    copy(lst.cbgin(), lst.cend(), inserter(lst3, lst3.begin()));
+```
+
+## stream iterators
+
+    <img src="./img/tbl103.JPG">
+### istream_iterator from iterator header
+```c++
+    //#include <iterator>
+
+    istream_iterator<int> in_iter(cin); //in_iter is iterator for cin that reads int type
+    istream_iterator<int> in_eof;
+    while(in_iter != in_eof)
+        vec.push_back(*in_iter++);
+```
+```c++
+
+    istream_iterator<int> in_iter(cin), eof; 
+    vector<int> ivec(in_iter, eof); //construct vector from an iterator range
+```
+- stream iterators with algorithm
+```c++
+
+    istream_iterator<int> in_iter(cin), eof;
+    cout<<accumulate(in_iter, eof, 0)<<endl;
+```
+### ostream_iterator for iterator header
+
+```c++
+
+    ostream_iterator<int> out_iter(cout," "); //optional 2nd argument to print a char string following each element
+    for (auto e: vec){
+        *out_iter++ = e;
+    }
+```
+```c++
+    copy(vec.begin(), vec.end(), out_iter); 
+    //copy algorithm
+    //third argument is an iterator to destination 
+```
+- using stream iterators with class types
+    - before
+    <img src="./img/1dot6.JPG">
+    - after
+    <img src="./img/10dot4dot2.JPG">
+
+
+## reverse iterators
+## move iterators
 
