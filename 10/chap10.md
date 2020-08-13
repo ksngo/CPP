@@ -138,9 +138,12 @@
 ```
 - using stream iterators with class types
     - before
-    <img src="./img/1dot6.JPG">
+        - <img src="./img/1dot6.JPG">
     - after
-    <img src="./img/10dot4dot2.JPG">
+        - <img src="./img/10dot4dot2.JPG">
+
+    - ex10.3.2 solution
+        - <img src = "./img/ex10.3.2.JPG">
 
 
 ## reverse iterators
