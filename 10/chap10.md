@@ -147,5 +147,18 @@
 
 
 ## reverse iterators
+    - vec.rbegin()
+    - vec.rend()
+    - vec.crbegin()
+    - vec.crend()
 ## move iterators
 
+
+# Members of list/forward_list containers instead of generic algorithms
+
+- Unlike other containers, list and forward_list define several algorithms as members
+- e.g. sort, merge, remove, reverse, unique
+<img src="./img/tbl106.JPG">
+
+-e.g. splice
+<img src="./img/tbl107.JPG">

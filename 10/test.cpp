@@ -151,6 +151,7 @@ int main()
    
     //(8) mutable lambda
 
+    /*
     size_t a = 42;
     auto f = [a]() mutable {return ++a;};
     cout<<a<<endl; //42
@@ -166,7 +167,42 @@ int main()
     auto h = g();
     cout<<h<<endl; //1
     cout<<b<<endl; //1
+    */
 
+    //(9) reverse iterator
+
+    vector<int> ivec{1,2,3,4,5,6,7,8,9};
+
+    for(auto iter=ivec.begin(); iter!=ivec.end() ; ++iter){
+        cout<<*iter<<" "; // result: 1 2 3 4 5 6 7 8 9
+    }
+
+    for(auto iter=ivec.rbegin(); iter!=ivec.rend() ; ++iter){
+        cout<<*iter<<" "; //result: 9 8 7 6 5 4 3 2 1
+    }
+
+    cout<<endl;
+
+    string line("first,second,third"); //string and vector behaves quite similarly
+    for_each(line.begin(), line.end(), [](char c){cout<<c;}); //result: first,second,third
+    cout<<endl;
+
+    auto iter = find(line.begin(), line.end(), ',' ); //returns iterator for position of comma
+
+   cout<<string(line.begin(), iter)<<endl; //result: first
+
+
+    auto iter2 = find(line.rbegin(), line.rend(), ','); // returns a reverse iterator type
+
+    // needs to change reverse iterator to forward with base() 
+    cout<<string(iter2.base(), line.end() )<<endl; //result: third 
+
+    //cout<<string(iter2, line.end())<<endl; //ERROR
+
+    cout<<string(line.rbegin(), iter2 )<<endl; //result: driht
+    //cout<<string(iter2, line.rbegin() )<<endl; // ERROR
+
+    
 
 
 
