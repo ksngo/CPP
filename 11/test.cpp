@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include <set>
+#include <vector>
 
 using namespace std;
 
@@ -48,6 +49,7 @@ int main()
 
    //(3) Associative container , iterators
 
+    /*
    map<int, string> imap{{10,"hello"}, {2, "world"}, {3,"fuzzy"}};
 
 
@@ -61,6 +63,51 @@ int main()
         cout<<map_iter->first<<" "<<map_iter->second<<endl; //iterator yield elments in ascending key order
         ++map_iter;
     }
+    */
+
+    //(4) insert elements in associative container
+
+    vector<int> ivec{1,2,3,4,1,2,3,4};
+    set<int> iset;
+
+    //c.insert(b,e)
+    iset.insert(ivec.begin(), ivec.end()); //associate container set only have unique keys
+    for(auto element: iset) cout<<element<<" "; //result: 1 2 3 4
+    cout<<endl;
+
+    //c.insert(il)
+    iset.insert({1,2,5,6,}); 
+    for(auto element: iset) cout<<element<<" "; //result: 1 2 3 4 5 6
+    cout<<endl;
+
+    
+    map<int, string> imap;
+
+    imap.insert({{1,"hello"},{2,"world"}});
+    
+    auto ipair = imap.insert(pair<int, string>(3,"nice"));
+    
+    cout<<(*(ipair.first)).first<<endl; // result: 3
+    cout<<(*(ipair.first)).second<<endl; // result: nice
+    //ipair.first returns iterator to the inserted element
+    //NOTE: if not inserted because the key already exists, ipair will return as usual as a pair with "pair.first equals iterator to the existing key" and "pair.second equals false"
+    //*(ipair.first) returns the element
+    //(*(pair.first)).second return the value of the element
+    //(*(pair.first)).first return the key of the element
+
+    cout<<ipair.second<<endl; // result: 1 or true ; meaning {3,"nice"} are inserted into imap
+
+    imap.emplace(4,"weather");
+    
+    imap.insert(make_pair(6,"spectacular"));
+    
+    imap.insert( map<int,string>::value_type(7,"ronaldo")); //constructs a pair type
+    for(auto element: imap){
+        cout<<element.first<<" "<<element.second<<endl;
+    }
+
+
+
 
 
 }
