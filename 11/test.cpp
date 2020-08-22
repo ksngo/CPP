@@ -67,6 +67,7 @@ int main()
 
     //(4) insert elements in associative container
 
+    /*
     vector<int> ivec{1,2,3,4,1,2,3,4};
     set<int> iset;
 
@@ -105,6 +106,101 @@ int main()
     for(auto element: imap){
         cout<<element.first<<" "<<element.second<<endl;
     }
+
+    */
+
+   //(5) erase elements in associative container
+
+    /*
+   set<int> iset{1,2,3,4,5,1,2,3,4,5};
+
+   for(auto i :  iset) cout<<i<<",";
+   cout<<endl;
+    //(a) c.erase(p), removes element denoted by iterator p, returns iterator after p
+//    auto iter = iset.erase(iset.begin());
+//    cout<<*iter<<endl;
+
+    //(b) c.erase(k), key k, returns size_type number of elements removed
+
+    size_t num_ele_removed =  iset.erase(3);
+
+    cout<<num_ele_removed<<endl;
+    for(auto i :  iset) cout<<i<<",";
+   cout<<endl;
+
+   //(c) c.erase(b,e) , remove elements in range denoted by iterator pair b,e, returns e
+    */
+
+   //(6) subscript operation for map and unordered_map
+
+    /*
+   map<string, int> imap{ {"paul", 1000}, {"mary",200}, {"terry",999}};
+
+    for(auto i : imap){
+        cout<<i.first<<" "<<i.second<<endl;
+    }
+
+    cout<<imap["paul"]<<endl;
+    cout<<imap.at("paul")<<endl;
+    // cout<<imap.at("Paul")<<endl; //terminate called after throwing an instance of 'std::out_of_range'
+    imap["jerry"]; //add key and initialise element
+    imap["Jerry"] = 777;
+
+     for(auto i : imap){
+        cout<<i.first<<" "<<i.second<<endl;
+    }
+    */
+
+   //(7) find , count operations for associative containers
+
+    /*
+    
+    map<string, int> imap{ {"paul", 1000}, {"mary",200}, {"terry",999}};
+
+    auto iter = imap.find("mary"); //if found, return iterator
+    cout<<iter->first<<endl;
+    cout<<iter->second<<endl;
+
+    if(imap.find("john") == imap.end()){ //if not found, return end iterator
+        cout<<"john can't be found."<<endl;
+    }
+
+    multimap<string,int> imultimap{ {"paul", 1000}, {"mary",200}, {"terry",999}, {"paul", 4000}, {"paul", 8000}};
+
+    cout<<imultimap.count("paul")<<endl; //result:3
+    cout<<imultimap.count("mary")<<endl; //result:1
+
+    auto entries = imultimap.count("paul");
+    auto iter2 = imultimap.find("paul");
+    while(entries){
+        cout<<iter2->second<<endl;
+        ++iter2;
+        --entries;
+    }
+
+    */
+    
+
+    //(8) lower_bound, upper_bound operations for associative containers
+
+    /*
+    multimap<string,int> imultimap{ {"paul", 1000}, {"mary",200}, {"terry",999}, {"paul", 4000}, {"paul", 8000}};
+
+    for(auto low = imultimap.lower_bound("paul"), up = imultimap.upper_bound("paul"); low != up; ++low ){
+        cout<<low->second<<endl;
+    }
+
+    */
+   
+   //(9) equal_range operations for associative container
+
+    /*
+   multimap<string,int> imultimap{ {"paul", 1000}, {"mary",200}, {"terry",999}, {"paul", 4000}, {"paul", 8000}};
+
+   for(auto dual_iters = imultimap.equal_range("paul"); dual_iters.first != dual_iters.second ; ++dual_iters.first){
+       cout<<dual_iters.first->second<<endl;
+   }
+   */
 
 
 
